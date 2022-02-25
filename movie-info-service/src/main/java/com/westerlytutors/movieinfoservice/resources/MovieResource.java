@@ -11,6 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class MovieResource {
     @RequestMapping("/{movieId}")
     public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
-        return new Movie(movieId, "Test name");
+        Movie movie;
+        if(movieId.equals("100")){
+            movie = new Movie(movieId, "Avengers", "Marvel movie");
+        }
+        else if(movieId.equals("200")) {
+            movie = new Movie(movieId, "Terminator", "Arnold movie");
+        }
+        else {
+            movie = new Movie(movieId, "No movie found", "");
+        }
+        return movie;
     }
 }
