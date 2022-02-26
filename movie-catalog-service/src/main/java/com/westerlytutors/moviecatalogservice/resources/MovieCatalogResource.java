@@ -9,6 +9,7 @@ import com.westerlytutors.moviecatalogservice.models.Movie;
 import com.westerlytutors.moviecatalogservice.models.UserRating;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,9 @@ public class MovieCatalogResource {
     private static final String CATALOG_SERVICE = "catalogService";
     @Autowired
     RestTemplate restTemplate;
+
+    @Value("${db.host:No db host}")
+    private String dbHostValue;
 
     @RequestMapping("/{userId}")
     @CircuitBreaker(name = CATALOG_SERVICE, fallbackMethod = "catalogFallback")
@@ -40,5 +44,9 @@ public class MovieCatalogResource {
     public List<CatalogItem> catalogFallback(Exception ex) {
         return Arrays.asList(new CatalogItem("No Movie", "No desc", 0));    
 
+    }
+    @RequestMapping("/show-db-details")
+    public String showDbHost(){
+        return dbHostValue;
     }
 }
