@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: movie_info_route
+        uri: http://localhost:9091/
+        predicates:
+        - Path=/movies/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
