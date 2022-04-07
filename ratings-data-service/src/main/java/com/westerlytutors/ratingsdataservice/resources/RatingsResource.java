@@ -1,5 +1,6 @@
 package com.westerlytutors.ratingsdataservice.resources;
 
+import com.westerlytutors.ratingsdataservice.models.AllUserRatings;
 import com.westerlytutors.ratingsdataservice.models.Rating;
 import com.westerlytutors.ratingsdataservice.models.UserRating;
 
@@ -16,9 +17,9 @@ public class RatingsResource {
     }
     @RequestMapping("/user/{userId}")
     public UserRating getUserRatings(@PathVariable("userId") String userId) {
-        UserRating userRating = new UserRating();
-        userRating.initData(userId);
-        return userRating;
+        AllUserRatings allUserRatings = new AllUserRatings();
+        allUserRatings.initData();       
+        return allUserRatings.findUserRatingByUserId(userId);
 
     }
 }

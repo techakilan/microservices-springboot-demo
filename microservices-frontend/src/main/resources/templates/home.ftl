@@ -10,20 +10,31 @@
 
 <body>
     <h1>Movie Catalog Service</h1>
-    <#if is_logged_user>
-        <h3>Welcome logged user</h3>
-        Click MovieId below to get info
-        <table>
-            <tr><td>MovieId</td></tr>
-            <tr><td><a href="http://localhost:9095/movies/100">100</a></td></tr>
-            <tr><td><a href="http://localhost:9095/movies/200">200</a></td></tr>
-        </table>
-        <a href="/logout">Logout</a>
-    <#else>
-        <h3>Welcome!!!</h3>
-        Login to use the movie catalog services
-        <a href="/login">Login</a>
-    </#if>
+            <#if is_logged_user>
+            <h3>Welcome user</h3>
+            <h4>Get Movie info by Id</h4>
+            
+            <form action="/movie-info" method="post">
+                    <div>Enter MovieId:(upto 25000)</div>
+                    <input type="text" name="movieId"/>
+                    <br/><br/>
+                    <input type="submit" value="Submit"/>
+                    <input type="reset" value="Reset"/>
+            </form>
+            <h4>Get Movie Catalog by user Id</h4>
+            <form action="/movie-catalog" method="post">
+                    <div>Enter user Id:</div>
+                    <input type="text" name="userId"/>
+                    <br/><br/>
+                    <input type="submit" value="Submit"/>
+                    <input type="reset" value="Reset"/>
+            </form>
+        <#else>
+            <h3>Welcome!!!</h3>
+            Login to use the movie catalog services
+            <a href="/login">Login</a>
+        </#if>
+   
 </body>
 
 </html>
