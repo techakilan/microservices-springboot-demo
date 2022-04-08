@@ -1,4 +1,5 @@
      #!/bin/sh
+     PROJECT_PATH=/home/akilan/devops_training/microservices-springboot-demo
      CUSTOM_SERVICE_NAME=movie-catalog-service
      JAR_FILE_PATH=$PROJECT_PATH/movie-catalog-service/target/movie-catalog-service.jar
      PID_NAME_PATH=/tmp/movie-catalog-service-pid
