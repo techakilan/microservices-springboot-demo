@@ -1,5 +1,5 @@
      #!/bin/sh
-     PROJECT_PATH=/home/akilan/devops_training/microservices-springboot-demo
+     PROJECT_PATH=/home/ec2-user/myapp/microservices-springboot-demo
      CUSTOM_SERVICE_NAME=discovery-service
      JAR_FILE_PATH=$PROJECT_PATH/discovery-service/target/discovery-service.jar
      PID_NAME_PATH=/tmp/discovery-service-pid

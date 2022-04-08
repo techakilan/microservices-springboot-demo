@@ -1,5 +1,5 @@
      #!/bin/sh
-     PROJECT_PATH=/home/akilan/devops_training/microservices-springboot-demo
+     PROJECT_PATH=/home/ec2-user/myapp/microservices-springboot-demo
      CUSTOM_SERVICE_NAME=ratings-data-service
      JAR_FILE_PATH=$PROJECT_PATH/ratings-data-service/target/ratings-data-service.jar
      PID_NAME_PATH=/tmp/ratings-data-service-pid
