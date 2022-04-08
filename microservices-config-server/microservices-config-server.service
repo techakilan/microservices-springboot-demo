@@ -7,9 +7,9 @@
      Restart=always
      RestartSec=1
      SuccessExitStatus=143
-     ExecStart = /usr/local/bin/microservices-config-server.sh start
-     ExecStop = /usr/local/bin/microservices-config-server.sh stop
-     ExecReload = /usr/local/bin/microservices-config-server.sh reload
+     ExecStart = /bin/bash /usr/local/bin/microservices-config-server.sh start
+     ExecStop = /bin/bash /usr/local/bin/microservices-config-server.sh stop
+     ExecReload = /bin/bash /usr/local/bin/microservices-config-server.sh reload
 
 [Install]
      WantedBy=multi-user.target
