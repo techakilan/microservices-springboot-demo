@@ -1,17 +1,20 @@
-ports=()
+applications=()
 
 # Add new element at the end of the array
-ports+=("8761")
-ports+=("8888")
-ports+=("9090")
-ports+=("9091")
-ports+=("9092")
-ports+=("9095")
-ports+=("9096")
+applications+=("discovery-service")
+applications+=("microservices-api-gateway")
+applications+=("microservices-config-server")
+applications+=("microservices-frontend")
+applications+=("movie-catalog-service")
+applications+=("movie-info-service")
+applications+=("ratings-data-service")
 
 # Iterate the loop to read and print each array element
-for port in "${ports[@]}"
+for app in "${applications[@]}"
 do
-     kill $(lsof -t -i:$port)     
+     ./$app/linux_systemd.sh stop  
 
 done
+
+
+exit 0

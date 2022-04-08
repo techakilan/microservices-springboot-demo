@@ -12,3 +12,4 @@ ratings-data-service - http://localhost:9092
 
 
 curl localhost:8888/actuator/refresh -d {} -H "Content-Type: application/json"
+https://www.devstringx.com/run-jar-file-in-background-on-aws-ec2

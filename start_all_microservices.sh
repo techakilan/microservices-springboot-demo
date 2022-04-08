@@ -1,4 +1,3 @@
-rm -rf nohup.out
 applications=()
 
 # Add new element at the end of the array
@@ -13,8 +12,9 @@ applications+=("ratings-data-service")
 # Iterate the loop to read and print each array element
 for app in "${applications[@]}"
 do
-     echo "starting $app"
-     nohup java -jar "$app/target/$app.jar" &     
+     cd $app
+     ./linux_systemd.sh start 
+     cd ..
 
 done
 
