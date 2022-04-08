@@ -1,6 +1,7 @@
      #!/bin/sh
+     PROJECT_PATH=/home/akilan/devops_training/microservices-springboot-demo
      CUSTOM_SERVICE_NAME=microservices-api-gateway
-     JAR_FILE_PATH=$2/microservices-api-gateway/target/microservices-api-gateway.jar
+     JAR_FILE_PATH=$PROJECT_PATH/microservices-api-gateway/target/microservices-api-gateway.jar
      PID_NAME_PATH=/tmp/microservices-api-gateway-pid
      case $1 in
      start)

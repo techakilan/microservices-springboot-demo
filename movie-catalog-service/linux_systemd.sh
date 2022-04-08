@@ -1,6 +1,6 @@
      #!/bin/sh
      CUSTOM_SERVICE_NAME=movie-catalog-service
-     JAR_FILE_PATH=$2/movie-catalog-service/target/movie-catalog-service.jar
+     JAR_FILE_PATH=$PROJECT_PATH/movie-catalog-service/target/movie-catalog-service.jar
      PID_NAME_PATH=/tmp/movie-catalog-service-pid
      case $1 in
      start)

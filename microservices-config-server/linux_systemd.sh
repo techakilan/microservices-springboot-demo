@@ -1,6 +1,7 @@
      #!/bin/sh
+     PROJECT_PATH=/home/akilan/devops_training/microservices-springboot-demo
      CUSTOM_SERVICE_NAME=microservices-config-server
-     JAR_FILE_PATH=$2/microservices-config-server/target/microservices-config-server.jar
+     JAR_FILE_PATH=$PROJECT_PATH/microservices-config-server/target/microservices-config-server.jar
      PID_NAME_PATH=/tmp/microservices-config-server-pid
      case $1 in
      start)
