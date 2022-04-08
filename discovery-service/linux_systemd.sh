@@ -1,6 +1,6 @@
      #!/bin/sh
      CUSTOM_SERVICE_NAME=discovery-service
-     JAR_FILE_PATH=target/discovery-service.jar
+     JAR_FILE_PATH=$2/discovery-service/target/discovery-service.jar
      PID_NAME_PATH=/tmp/discovery-service-pid
      case $1 in
      start)

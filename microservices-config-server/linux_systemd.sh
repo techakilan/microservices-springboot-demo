@@ -1,6 +1,6 @@
      #!/bin/sh
      CUSTOM_SERVICE_NAME=microservices-config-server
-     JAR_FILE_PATH=target/microservices-config-server.jar
+     JAR_FILE_PATH=$2/microservices-config-server/target/microservices-config-server.jar
      PID_NAME_PATH=/tmp/microservices-config-server-pid
      case $1 in
      start)

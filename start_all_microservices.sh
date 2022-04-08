@@ -13,7 +13,8 @@ applications+=("ratings-data-service")
 for app in "${applications[@]}"
 do
      cd $app
-     ./linux_systemd.sh start 
+     PROJECT_HOME=/home/akilan/devops_training/microservices-springboot-demo
+     ./linux_systemd.sh start $PROJECT_HOME
      cd ..
 
 done
