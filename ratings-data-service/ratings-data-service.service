@@ -7,9 +7,9 @@
      Restart=always
      RestartSec=1
      SuccessExitStatus=143
-     ExecStart = /usr/local/bin/ratings-data-service.sh start
-     ExecStop = /usr/local/bin/ratings-data-service.sh stop
-     ExecReload = /usr/local/bin/ratings-data-service.sh reload
+     ExecStart = /bin/bash /usr/local/bin/ratings-data-service.sh start
+     ExecStop = /bin/bash /usr/local/bin/ratings-data-service.sh stop
+     ExecReload = /bin/bash /usr/local/bin/ratings-data-service.sh reload
 
 [Install]
      WantedBy=multi-user.target
