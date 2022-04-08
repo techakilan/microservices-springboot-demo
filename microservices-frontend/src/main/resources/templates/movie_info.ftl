@@ -15,15 +15,10 @@
 
 <body>
     <h1>Movie Info Page</h1>
-    <#if error.attribute>
-       "Something went wrong!!!"
-    <#else>
-        <table>
-        
+        <table>        
         <tr><th>Name</th><td>${movie_name}</td></tr>
         <tr><th>Description</th><td>${movie_description}</td></tr>
         </table>
-    </#if>
 </body>
 
 </html>

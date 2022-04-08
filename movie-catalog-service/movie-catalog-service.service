@@ -1,0 +1,15 @@
+[Unit]
+     Description = Microservice Demo Movie Catalog Service
+     After network.target = movie-catalog-service.service
+
+[Service]
+     Type = forking
+     Restart=always
+     RestartSec=1
+     SuccessExitStatus=143
+     ExecStart = /usr/local/bin/movie-catalog-service.sh start
+     ExecStop = /usr/local/bin/movie-catalog-service.sh stop
+     ExecReload = /usr/local/bin/movie-catalog-service.sh reload
+
+[Install]
+     WantedBy=multi-user.target
