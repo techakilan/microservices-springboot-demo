@@ -5,12 +5,14 @@ package com.westerly.microservicesfrontend.models;
 public class Movie {
     private int movieId;
     private String name;
-    private String description;   
-    public Movie(int movieId, String name, String description) {
+    private String description; 
+    private   String movieInfoServerUrl;
+    public Movie(int movieId, String name, String description, String movieInfoServerUrl) {
         this.movieId = movieId;
         this.name = name;
         this.description = description;
-    }
+        this.movieInfoServerUrl = movieInfoServerUrl;
+    }   
     public Movie() {
     }
    
@@ -31,5 +33,11 @@ public class Movie {
     }
     public void setMovieId(int movieId) {
         this.movieId = movieId;
+    }
+    public String getMovieInfoServerUrl() {
+        return movieInfoServerUrl;
+    }
+    public void setMovieInfoServerUrl(String movieInfoServerUrl) {
+        this.movieInfoServerUrl = movieInfoServerUrl;
     }
 }

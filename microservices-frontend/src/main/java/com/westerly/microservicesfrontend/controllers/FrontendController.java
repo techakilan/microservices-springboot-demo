@@ -45,6 +45,7 @@ public class FrontendController {
                 url, Movie.class);
                 model.addAttribute("movie_name", movie.getName());
                 model.addAttribute("movie_description", movie.getDescription());
+                model.addAttribute("base_url", movie.getMovieInfoServerUrl());
         } catch (Exception e) {
             model.addAttribute("error", "Something went wrong!!! Try with with another movieId or userId");
                         

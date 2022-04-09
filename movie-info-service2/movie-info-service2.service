@@ -1,0 +1,15 @@
+[Unit]
+     Description = Microservice Demo Movie Info Service Again
+     After network.target = movie-info-service2.service
+
+[Service]
+     Type = forking
+     Restart=always
+     RestartSec=1
+     SuccessExitStatus=143
+     ExecStart = /bin/bash /usr/local/bin/movie-info-service2.sh start
+     ExecStop = /bin/bash /usr/local/bin/movie-info-service2.sh stop
+     ExecReload = /bin/bash /usr/local/bin/movie-info-service2.sh reload
+
+[Install]
+     WantedBy=multi-user.target
