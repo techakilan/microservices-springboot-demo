@@ -1,0 +1,8 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh
+  endpoint:
+    health:
+      show-details: always
