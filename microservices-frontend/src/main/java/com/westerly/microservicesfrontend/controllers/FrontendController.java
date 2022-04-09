@@ -1,7 +1,5 @@
 package com.westerly.microservicesfrontend.controllers;
 
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,6 +23,9 @@ public class FrontendController {
 
     @Value("${endpoints.microservices-api-gateway-url:'http://localhost:9095'}")
     private String apiGatewayUrl;
+    @Value("${movie-info-page-title:Movie Info Page Title default}")
+    private String movieInfoPageTitle;
+    
 
     @Autowired
     RestTemplate restTemplate;
@@ -42,13 +43,14 @@ public class FrontendController {
         String url = apiGatewayUrl + "/movies/" + movieId;
         try {
             Movie movie = restTemplate.getForObject(
-                url, Movie.class);
-                model.addAttribute("movie_name", movie.getName());
-                model.addAttribute("movie_description", movie.getDescription());
-                model.addAttribute("base_url", movie.getMovieInfoServerUrl());
+                    url, Movie.class);
+            model.addAttribute("movie_info_page_title", movieInfoPageTitle);
+            model.addAttribute("movie_name", movie.getName());
+            model.addAttribute("movie_description", movie.getDescription());
+            model.addAttribute("base_url", movie.getMovieInfoServerUrl());
         } catch (Exception e) {
             model.addAttribute("error", "Something went wrong!!! Try with with another movieId or userId");
-                        
+
         }
         return "movie_info";
     }
@@ -79,9 +81,10 @@ public class FrontendController {
         return "redirect:/";
 
     }
+
     @GetMapping("/error")
-    public String error(Model model){
-        model.addAttribute("error","Something went wrong!!! Try with with another movieId or userId");
+    public String error(Model model) {
+        model.addAttribute("error", "Something went wrong!!! Try with with another movieId or userId");
         return "error";
     }
 }

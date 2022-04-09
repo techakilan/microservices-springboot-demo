@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <h1>Movie Info Page</h1>
+    <h1>${movie_info_page_title}</h1>
     <h3>From ${base_url}</h3>
         <table>        
         <tr><th>Name</th><td>${movie_name}</td></tr>
